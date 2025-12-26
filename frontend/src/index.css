@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+* {
+  user-select: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+body {
+  background-color: #000;
+  color: rgb(255, 255, 236);
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+.auth-border {
+  animation: authbtn 6s ease-in-out infinite;
+}
+
+@keyframes authbtn {
+  0% {
+    background: #000;
+  }
+  40% {
+    background: #ff9ffc;
+  }
+  50% {
+    background: #000;
+  }
+  70% {
+    background: #ff9ffc;
+  }
+  100% {
+    background: #000;
+  }
+}
