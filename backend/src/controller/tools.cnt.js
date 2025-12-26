@@ -41,7 +41,7 @@ export async function getYoutubeDetails(videoId) {
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const ai = new GoogleGenAI({
-  apiKey: "AIzaSyC36s5IvHcYvrzlU_nbUQF0gY3rksb8fpM",
+  apiKey: process.env.GEMINI_API_KEY,
 });
 export async function Summary(req, res) {
   try {
