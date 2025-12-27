@@ -63,13 +63,12 @@ const register = async (req, res) => {
 };
 
 export const signout = (req, res) => {
-  res.cookie("token", "", {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    expires: new Date(0), // expire immediately
-    path: "/", // match path used in login
-  });
+  res.clearCookie("token", {
+  httpOnly: true,
+  sameSite: "lax",
+  secure: false, // true in HTTPS
+  path: "/",
+});
   res.status(200).json({ message: "Logged out successfully" });
 };
 
@@ -159,3 +158,4 @@ export const getMe = async (req, res) => {
 }; */
 
 export default register;
+
