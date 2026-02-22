@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Responsive Touch Targets */
+@media (max-width: 640px) {
+  button, a, input[type="checkbox"], input[type="radio"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+body {
+  background-color: #000;
+  color: rgb(255, 255, 236);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent body scroll on mobile when menu is open */
+body.overflow-hidden {
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+.auth-border {
+  animation: authbtn 6s ease-in-out infinite;
+}
+
+@keyframes authbtn {
+  0% {
+    background: #000;
+  }
+  40% {
+    background: #ff9ffc;
+  }
+  50% {
+    background: #000;
+  }
+  70% {
+    background: #ff9ffc;
+  }
+  100% {
+    background: #000;
+  }
+}
+
+/* Responsive improvements for mobile and all devices */
+@media (max-width: 640px) {
+  .dashboard-panel, .summary-section, .badge-section, .menu-panel, .flowbook-panel {
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    padding: 8px !important;
+    margin: 0 !important;
+    border-radius: 0.5rem !important;
+    font-size: 14px !important;
+    box-sizing: border-box;
+  }
+  .summary-section {
+    font-size: 15px !important;
+    padding: 10px !important;
+    background: #18181b !important;
+    color: #fff !important;
+    border: 1px solid #333 !important;
+    border-radius: 0.5rem !important;
+    overflow-wrap: break-word;
+  }
+  .badge-section {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    margin-bottom: 8px !important;
+  }
+  .badge {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+    border-radius: 0.5rem !important;
+    background: #3b82f6 !important;
+    color: #fff !important;
+    cursor: pointer;
+    max-width: 90vw !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .menu-panel {
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    padding: 8px !important;
+    border-radius: 0.5rem !important;
+    font-size: 14px !important;
+    box-sizing: border-box;
+    background: #18181b !important;
+    color: #fff !important;
+  }
+  .flowbook-panel {
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    padding: 8px !important;
+    border-radius: 0.5rem !important;
+    font-size: 14px !important;
+    box-sizing: border-box;
+    background: #18181b !important;
+    color: #fff !important;
+    min-height: 60vh !important;
+    height: 100% !important;
+  }
+}

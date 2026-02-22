@@ -1,0 +1,10 @@
+{
+  "appId": "com.maple.app",
+  "appName": "maple",
+  "webDir": "dist",
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  }
+}
