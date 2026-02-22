@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="@mapcluc.artvrxj.mongodb.net" uuid="3435bb7b-5769-438d-bd45-5b98696ad8d8">
+      <driver-ref>documentdb</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
+      <jdbc-url>mongodb+srv://anujlakhekar13_db_user:7NK4hGhZ4jewQuSC@mapcluc.artvrxj.mongodb.net/?appName=mapcluc</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
