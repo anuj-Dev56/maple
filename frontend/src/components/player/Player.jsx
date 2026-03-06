@@ -257,15 +257,17 @@ const Player = () => {
       {isEmbedded ? (
         <div className="flex-1 flex flex-col p-2 sm:p-3 lg:p-4 gap-2 sm:gap-3 lg:gap-4 min-h-0">
           {/* Video */}
-          <div className="flex-1 rounded-lg lg:rounded-xl overflow-hidden shadow-lg lg:shadow-2xl border border-zinc-700/50 bg-black min-h-0 aspect-video">
-            <iframe
-              src={contentInfo?.embedUrl}
-              className="w-full h-full min-h-[200px] max-h-[60vh]"
-              title={player?.youtube?.title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+          <div className="w-full rounded-lg lg:rounded-xl overflow-hidden shadow-lg lg:shadow-2xl border border-zinc-700/50 bg-black">
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={contentInfo?.embedUrl}
+                className="absolute top-0 left-0 w-full h-full"
+                title={player?.youtube?.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </div>
 
           {/* Info Panel */}
@@ -337,16 +339,17 @@ const Player = () => {
         </div>
       ) : (
         /* ================= NATIVE VIDEO PLAYER ================= */
-        <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border border-zinc-700/50 my-2 sm:my-4 mx-auto max-w-5xl min-h-[200px] max-h-[60vh]">
-          <video
-            ref={videoRef}
-            className="w-full h-full object-contain"
-            src={
-              player?.url ||
-              "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-            }
-            onClick={togglePlay}
-          />
+        <div className="w-full p-2 sm:p-3 lg:p-4">
+          <div className="relative w-full bg-black rounded-lg overflow-hidden shadow-2xl border border-zinc-700/50 max-w-5xl mx-auto" style={{ paddingBottom: '56.25%' }}>
+            <video
+              ref={videoRef}
+              className="absolute top-0 left-0 w-full h-full object-contain"
+              src={
+                player?.url ||
+                "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              }
+              onClick={togglePlay}
+            />
 
           {!isPlaying && (
             <div
@@ -435,6 +438,7 @@ const Player = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       )}
     </div>

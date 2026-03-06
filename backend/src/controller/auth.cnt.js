@@ -79,7 +79,7 @@ export const firebaseAuthCnt = async (req, res) => {
 
     const { uid, email, name, picture } = payload;
     const baseName = name || email?.split("@")[0] || "user";
-    const username = generateUserName(baseName);
+    const username = generateUserName(baseName);``
 
     let user = await User.findOne({ "personal.auth.firebaseUid": uid });
 

@@ -36,12 +36,12 @@ export async function getYoutubeDetails(videoId) {
     };
 }
 
-const token = process.env.GEMINI_API_KEY;
+const token = "AIzaSyB9y-iV2ahUX8lioPlEquFVQqvmDIHL8a0"
 
 console.log(token);
 
 const ai = new GoogleGenAI({
-    apiKey: "AIzaSyBIezPGOnR1GVG3oda4uB7uoTC-wVBPKoA",
+    apiKey: "AIzaSyB9y-iV2ahUX8lioPlEquFVQqvmDIHL8a0",
 });
 
 export async function Summary(req, res) {

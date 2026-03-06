@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {useAuth} from "../components/Auth/AuthlayoutWrapper";
 import {useParams} from "react-router-dom";
 import Sidebar from "../components/ui/Sidebar";
@@ -6,11 +6,10 @@ import Player from "../components/player/Player";
 import New from "../components/player/New";
 import {useData} from "../components/ui/DataWrapper";
 import Chat from "../components/ui/Chat";
-import AuthPanel from "../components/Auth/Auth.layout";
 import AuthBtn from "../components/Auth/AuthBtn";
 import HistoryEditPanel from "../components/ui/HistoryEditPanel";
 import FlowBook from "../components/ui/FlowBook";
-import Chart from "../components/ui/Chart";
+import NoteGenerator from "../components/ui/NoteGenerator";
 
 const Dashboard = ({type}) => {
     const {account} = useAuth();
@@ -89,6 +88,10 @@ const Dashboard = ({type}) => {
             <div className="w-full max-h-[50vh] sm:max-h-[60vh] lg:max-h-[65vh]">
                 <Chat/>
             </div>
+            {/* FlowBook - Full width on mobile, responsive */}
+            <div className="w-full mt-20">
+                <FlowBook/>
+            </div>
         </div>
     );
 
@@ -137,19 +140,11 @@ const Dashboard = ({type}) => {
                                     <HistoryEditPanel/>
                                 </div>
 
-                                {/* Chart - Mobile Friendly */}
-                                <div className="w-full rounded-lg overflow-hidden border-2 border-white/10">
-                                    <div
-                                        className="py-2 sm:py-3 px-3 sm:px-4 bg-white/10 rounded text-xs sm:text-sm font-medium">
-                                        Interest Level
-                                    </div>
-                                    <Chart data={Chartdata}/>
+                                {/* Note Generator - AI-powered notes */}
+                                <div className="w-full">
+                                    <NoteGenerator/>
                                 </div>
 
-                                {/* FlowBook - Full width on mobile, responsive */}
-                                <div className="w-full">
-                                    <FlowBook/>
-                                </div>
                             </div>
                         </div>
                     )}
